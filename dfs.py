@@ -14,8 +14,11 @@ def DFS(initial_state, goal_state):
 
     print('Searching for a path...')
     while len(stack.get_values()) > 0:
+        print('stack: ', end='')
+        [print(f'{e.__str__()} ', end='') for e in stack.get_values()]
+        print()
         current_node = stack.pop()
-        print(current_node.__str__())
+        print(f'current: {current_node.__str__()}')
 
         if current_node.is_equal_to(goal_state):
             print('Goal found!')

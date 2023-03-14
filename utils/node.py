@@ -38,4 +38,4 @@ class Node:
                 ))
 
     def __str__(self) -> str:
-        return f'state: {self.state.__str__()}'
+        return f'{self.state.__str__()}'

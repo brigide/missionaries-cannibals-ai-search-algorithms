@@ -12,7 +12,8 @@ class State:
     def has_more_cannibals_on_wrong_side(self):
         """This method checks if C outnumber M at wrong side"""
         return ((self.missionaries == 2 and self.cannibals == 1) or
-                (self.missionaries == 1 and self.cannibals == 0))
+                (self.missionaries == 1 and self.cannibals == 0) or 
+                (self.missionaries == 2 and self.cannibals == 0))
 
     def has_more_cannibals_on_correct_side(self):
         """This method checks if C outnumber M at correct side"""

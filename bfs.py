@@ -15,7 +15,11 @@ def BFS(initial_state, goal_state):
 
     print('Searching for optimal path...')
     while len(queue.get_values()) > 0:
+        print('queue: ', end='')
+        [print(f'{e.__str__()} ', end='') for e in queue.get_values()]
+        print()
         current_node = queue.dequeue()
+        print(f'current: {current_node.__str__()}')
 
         if current_node.is_equal_to(goal_state):
             print('Goal found!')
