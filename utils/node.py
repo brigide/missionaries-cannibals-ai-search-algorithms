@@ -12,7 +12,7 @@ class Node:
         if self.state.is_valid():
             self.calculate_edges()
 
-    def is_goal(self, goal):
+    def is_equal_to(self, goal):
         return self.state.is_equal_to(goal)
 
 

@@ -1,4 +1,5 @@
 from bfs import BFS
+from dfs import DFS
 from utils.state import State
 
 def main():
@@ -32,7 +33,8 @@ def main():
         BFS(INITIAL_STATE_TUPLE, GOAL_STATE_TUPLE)
 
     elif choice == 2:
-        pass
+        DFS(INITIAL_STATE_TUPLE, GOAL_STATE_TUPLE)
+
     elif choice == 3:
         pass
     elif choice == 4:
