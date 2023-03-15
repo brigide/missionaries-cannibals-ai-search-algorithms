@@ -98,6 +98,9 @@ class State:
 
         return True
 
-    def __str__(self) -> str:
-        return f'({self.missionaries}, {self.cannibals}, {self.boat})'
+    def __str__(self, heuristics) -> str:
+        if heuristics == None:
+            return f'({self.missionaries}, {self.cannibals}, {self.boat})'
+        
+        return f'({self.missionaries}, {self.cannibals}, {self.boat}, {heuristics})'
 

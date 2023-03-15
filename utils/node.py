@@ -6,11 +6,15 @@ class Node:
         self.edges = []
         self.searched = False
         self.parent = None
+        self.heuristic_value = None
 
     def set_searched(self):
         self.searched = True
         if self.state.is_valid():
             self.calculate_edges()
+
+    def set_heuristics(self, value):
+        self.heuristic_value = value
 
     def is_equal_to(self, goal):
         return self.state.is_equal_to(goal)
@@ -37,5 +41,8 @@ class Node:
                     )
                 ))
 
-    def __str__(self) -> str:
-        return f'{self.state.__str__()}'
+    def __str__(self, show_heuristic = False) -> str:
+        if show_heuristic:
+            return f'{self.state.__str__(self.heuristic_value)}'
+        
+        return f'{self.state.__str__(None)}'

@@ -1,5 +1,6 @@
 from bfs import BFS
 from dfs import DFS
+from gfs import GreedyBFS
 from utils.state import State
 
 def main():
@@ -36,7 +37,8 @@ def main():
         DFS(INITIAL_STATE_TUPLE, GOAL_STATE_TUPLE)
 
     elif choice == 3:
-        pass
+        GreedyBFS(INITIAL_STATE_TUPLE, GOAL_STATE_TUPLE)        
+
     elif choice == 4:
         pass
     else:
