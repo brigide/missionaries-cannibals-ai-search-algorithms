@@ -9,6 +9,7 @@ def BFS(initial_state, goal_state):
     initial_node = Node(initial_state)
     explored_states = Stack()
     explored_states.push(initial_node)
+    visited_states = 0
 
     initial_node.set_searched()
     queue.enqueue(initial_node)
@@ -19,10 +20,13 @@ def BFS(initial_state, goal_state):
         [print(f'{e.__str__()} ', end='') for e in queue.get_values()]
         print()
         current_node = queue.dequeue()
+        visited_states += 1
         print(f'current: {current_node.__str__()}')
 
         if current_node.is_equal_to(goal_state):
             print('Goal found!')
+            print(f'Explored {len(explored_states.get_values())} nodes')
+            print(f'Visited {visited_states} nodes')
             get_path(current_node)
             break
 
