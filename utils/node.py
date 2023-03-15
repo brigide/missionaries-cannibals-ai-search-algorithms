@@ -7,6 +7,7 @@ class Node:
         self.searched = False
         self.parent = None
         self.heuristic_value = None
+        self.depth = None
 
     def set_searched(self):
         self.searched = True
@@ -15,6 +16,9 @@ class Node:
 
     def set_heuristics(self, value):
         self.heuristic_value = value
+
+    def set_depth(self, value):
+        self.depth = value
 
     def is_equal_to(self, goal):
         return self.state.is_equal_to(goal)

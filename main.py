@@ -1,3 +1,4 @@
+from a_star import AStar
 from bfs import BFS
 from dfs import DFS
 from gfs import GreedyBFS
@@ -40,7 +41,8 @@ def main():
         GreedyBFS(INITIAL_STATE_TUPLE, GOAL_STATE_TUPLE)        
 
     elif choice == 4:
-        pass
+        AStar(INITIAL_STATE_TUPLE, GOAL_STATE_TUPLE)
+
     else:
         pass
 

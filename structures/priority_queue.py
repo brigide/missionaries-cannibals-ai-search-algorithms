@@ -9,11 +9,11 @@ class PriorityQueue:
         self.values.append(value)
 
     def dequeue(self):
-        max_value = -1
+        min_value = 999
         index = -1
         for value in self.values:
-            if value.heuristic_value > max_value:
-                max_value = value.heuristic_value
+            if value.heuristic_value < min_value:
+                min_value = value.heuristic_value
                 index = self.values.index(value)
 
         return self.values.pop(index)
