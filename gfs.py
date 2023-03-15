@@ -11,7 +11,7 @@ def GreedyBFS(initial_state, goal_state):
     explored_states.push(initial_node)
 
     initial_node.set_searched()
-    initial_node.set_heuristics(heuristics(1))
+    initial_node.set_heuristics(heuristics(initial_node.state))
     queue.enqueue(initial_node)
 
     print('Searching for a path...')
@@ -21,6 +21,7 @@ def GreedyBFS(initial_state, goal_state):
         print()
         current_node = queue.dequeue()
         print(f'current: {current_node.__str__(True)}')
+        print()
 
         if current_node.is_equal_to(goal_state):
                 print('Goal found!')
@@ -31,11 +32,11 @@ def GreedyBFS(initial_state, goal_state):
         for e in edges:
             if not e.searched and not queue.has_value(e) and not explored_states.has_value(e):
                 e.set_searched()
-                e.set_heuristics(heuristics(1))
+                e.set_heuristics(heuristics(e.state))
                 explored_states.push(e)
                 e.parent = current_node
                 queue.enqueue(e)
 
 
-def heuristics(value):
-    return value
+def heuristics(state):
+    return (state.missionaries + state.cannibals) - 1

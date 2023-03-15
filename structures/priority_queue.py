@@ -15,7 +15,6 @@ class PriorityQueue:
             if value.heuristic_value > max_value:
                 max_value = value.heuristic_value
                 index = self.values.index(value)
-                print(index)
 
         return self.values.pop(index)
     
