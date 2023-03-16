@@ -19,7 +19,7 @@ def main():
 
             1. Breadth-First Search
             2. Depth-First Search
-            3. Greedy Search
+            3. Greedy Best-First oneSearch
             4. A*
 
             0. Exit

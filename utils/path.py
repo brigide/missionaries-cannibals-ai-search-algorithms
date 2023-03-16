@@ -20,6 +20,7 @@ MISSIONARY_LIMIT = 3
 CANNIBAL_LIMIT = 3
 
 def draw_solution(path):
+    """Draw the found path on console"""
     for step in path:
         missionary_on_left = MISSIONARY_LIMIT - step.state.missionaries
         missionary_on_right = step.state.missionaries
@@ -47,6 +48,7 @@ def draw_solution(path):
 
 
 def get_path(node): 
+    """Backtrack parent to parent until connects start to finish"""
     print('Path:')
     path = []
     path.append(node)

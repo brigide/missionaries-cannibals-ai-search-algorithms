@@ -1,6 +1,7 @@
 from .state import State
 
 class Node:
+    """Class to represent a node to store a state and other values"""
     def __init__(self, state):
         self.state = state
         self.edges = []
