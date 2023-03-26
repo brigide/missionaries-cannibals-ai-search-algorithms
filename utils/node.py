@@ -12,8 +12,7 @@ class Node:
 
     def set_searched(self):
         self.searched = True
-        if self.state.is_valid():
-            self.calculate_edges()
+        self.calculate_edges()
 
     def set_heuristics(self, value):
         self.heuristic_value = value
@@ -29,22 +28,26 @@ class Node:
         for action in self.state.actions:
             # if boat is going to goal (True)
             if action[2]:
-                self.edges.append(Node(
+                new_node = Node(
                     State(
                         missionaries=self.state.missionaries + action[0],
                         cannibals=self.state.cannibals + action[1],
                         boat=action[2]
                     )
-                ))
+                )
+                if new_node.state.is_valid():
+                    self.edges.append(new_node)
 
             else:
-                self.edges.append(Node(
+                new_node = Node(
                     State(
                         missionaries=self.state.missionaries - action[0],
                         cannibals=self.state.cannibals - action[1],
                         boat=action[2]
                     )
-                ))
+                )
+                if new_node.state.is_valid():
+                    self.edges.append(new_node)
 
     def __str__(self, show_heuristic = False) -> str:
         if show_heuristic:

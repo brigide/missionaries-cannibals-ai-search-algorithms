@@ -32,8 +32,6 @@ def AStar(initial_state, goal_state):
         # check if goal was found
         if current_node.is_equal_to(goal_state):
                 print('Goal found!')
-                print(f'Explored {len(explored_states.get_values())} nodes')
-                print(f'Visited {visited_states} nodes')
                 get_path(current_node)
                 break
 
