@@ -21,13 +21,14 @@ Then, simply run
 
 Examples of states:
 
-- (0, 0, False) - Initial State
-- (3, 3, True)  - Goal State
+- (0, 0, False, 6) - Initial State
+- (3, 3, True, 0)  - Goal State
 
 Where:
  - First param shows the quantity of missionaries on the correct side of the river;
  - Second param shows the quantity of cannibals on the correct side of the river;
- - Last param shows if the boat is at the correct side of the river.
+ - Third param shows if the boat is at the correct side of the river;
+ - Last param shows the cost/heuristic value if the algorithm uses it.
 
 
 # Implementation
